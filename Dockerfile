@@ -1,4 +1,4 @@
-FROM dart:latest
+FROM dart:2.14.4
 
 # Resolve app dependencies.
 WORKDIR /app
