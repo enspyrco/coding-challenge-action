@@ -2,11 +2,11 @@ FROM dart:2.14.4-sdk
 
 # Resolve app dependencies.
 WORKDIR /app
-COPY pubspec.* ./
+COPY print_files/pubspec.* ./
 RUN dart pub get
 
 # Copy app source code and AOT compile it.
-COPY . .
+COPY print_files/* .
 # Ensure packages are still up-to-date if anything has changed
 RUN dart pub get --offline
 RUN dart compile exe bin/print_files.dart -o bin/print_files
