@@ -1,10 +1,10 @@
 name: 'Coding Challenges'
 description: 'Greet someone and record the time'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  github-token:  # id of input
+    description: 'The token for this job'
     required: true
-    default: 'World'
+    default: 'no-token'
 outputs:
   time: # id of output
     description: 'The time we greeted you'
@@ -12,4 +12,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.github-token }}

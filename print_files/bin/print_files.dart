@@ -1,6 +1,8 @@
 import 'dart:io';
 
 void main(List<String> arguments) async {
+  print('args: $arguments');
+
   var workspacePath = Platform.environment['GITHUB_WORKSPACE']!;
 
   print('Printing contents of : $workspacePath/head');
