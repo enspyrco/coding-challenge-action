@@ -11,8 +11,10 @@ COPY print_files ./
 RUN dart pub get --offline
 RUN dart compile exe bin/print_files.dart -o bin/print_files
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
-COPY entrypoint.sh /entrypoint.sh
+CMD ["/app/bin/print_files"]
 
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
-ENTRYPOINT ["/entrypoint.sh"]
+# # Copies your code file from your action repository to the filesystem path `/` of the container
+# COPY entrypoint.sh /entrypoint.sh
+
+# # Code file to execute when the docker container starts up (`entrypoint.sh`)
+# ENTRYPOINT ["/entrypoint.sh"]
