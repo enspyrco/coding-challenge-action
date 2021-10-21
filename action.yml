@@ -1,7 +1,7 @@
 name: 'Coding Challenges'
 description: 'Greet someone and record the time'
 inputs:
-  github-token:  # id of input
+  repo-token:  # id of input
     description: 'The token for this job'
     required: true
     default: 'no-token'
@@ -12,4 +12,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.github-token }}
+    - ${{ inputs.repo-token }}
