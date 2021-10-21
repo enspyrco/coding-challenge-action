@@ -1,5 +1,7 @@
-import 'package:print_files/print_files.dart' as print_files;
+import 'dart:io';
 
-void main(List<String> arguments) {
-  print('Hello world: ${print_files.calculate()}!');
+void main(List<String> arguments) async {
+  final dir = Directory('.');
+  final List<FileSystemEntity> entities = await dir.list().toList();
+  entities.forEach(print);
 }
