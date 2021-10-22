@@ -3,6 +3,9 @@ import 'dart:io';
 void main(List<String> arguments) async {
   print('args: $arguments');
 
+  Map<String, String> env = Platform.environment;
+  env.forEach((k, v) => print("Key=$k Value=$v"));
+
   var workspacePath = Platform.environment['GITHUB_WORKSPACE']!;
 
   print('Printing contents of : $workspacePath/head');
